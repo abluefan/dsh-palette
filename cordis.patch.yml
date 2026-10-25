@@ -1,0 +1,9 @@
+# dsh-palette bundle patch
+#
+# 一條 insert 行掛載本插件。Host 半邊負責注入初始 inline token 與兩個端點；
+# Client 半邊註冊設定頁的「調色盤」面板。
+#
+# ⚠ 不要同時把包加進 dsh.profile.bundles —— 同一 id 會被插兩次。
+- insert:
+    - id: dsh-palette
+      name: 'dsh-palette'

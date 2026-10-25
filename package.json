@@ -1,0 +1,36 @@
+{
+  "name": "dsh-palette",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Palette editor for DeepSeek Harness — per-token colour overrides written as inline custom properties",
+  "type": "module",
+  "engines": {
+    "dsh": ">=0.2.1-rc.2"
+  },
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./package.json": "./package.json",
+    "./tokens.json": "./tokens.json"
+  },
+  "files": [
+    "lib/index.js",
+    "lib/client.js",
+    "tokens.json",
+    "cordis.patch.yml"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-settings",
+        "@deepseek-ai/dsh-client-locale",
+        "@deepseek-ai/dsh-client-ui-primitives"
+      ]
+    }
+  }
+}
